@@ -1,0 +1,47 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+void drp(char []);
+int main()
+{
+    char a[1000];
+    cin>>a;
+    drp(a);
+    cout<<a;
+    return 0;
+}
+void drp(char a[])
+{
+    int l=strlen(a);
+    if(l==0||l==1)
+    return ;
+    if(a[0]!=a[1])
+    drp(a+1);
+    if(a[0]==a[1])
+    {
+        for(int i=1;i<=l;i++)
+        {
+            a[i-1]=a[i];
+        }
+        drp(a);
+    }
+    
+}
+
+
+//*****************************************************************************************************************************************
+/*
+Remove Duplicates Recursively
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Given a string S, remove consecutive duplicates from it recursively.
+Input Format :
+String S
+Output Format :
+Output string
+Constraints :
+1 <= Length of String S <= 10^3
+Sample Input :
+aabccba
+Sample Output :
+abcba
+*/
